@@ -1,0 +1,17 @@
+﻿@model Tag
+@{
+    if(ViewBag.Errors != null)
+    {
+        <h1 class="text-danger">@ViewBag.Errors</h1>
+    }
+}
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="TagName">Tag Name</label>
+        <input type="text" class="form-control" asp-for="TagName" value="@Model.TagName" />
+        <span asp-validation-for="TagName" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Update" class="btn btn-success w-100" />
+</form>
